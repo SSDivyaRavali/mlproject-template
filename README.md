@@ -12,12 +12,15 @@ This repository provides a template for organizing machine learning projects usi
 ├── notebooks/        # Jupyter notebooks
 ├── reports/          # Generated reports
 ├── src/              # Source code
+│   ├── config/       # Configurations 
 │   ├── data/         # Data loading and preprocessing
+│   ├── utils/        # Reusable code
 │   ├── evaluate/     # Model evaluation
 │   ├── features/     # Feature engineering
 │   ├── report/       # Report generation
 │   ├── stages/       # Pipeline stages
 │   └── train/        # Model training
+│   └── constants/    # Store constants
 ├── requirements.txt  # List Python dependencies
 ├── .dvc/             # DVC files and cache
 ├── .gitignore        # Git ignore rules
@@ -31,11 +34,17 @@ This repository provides a template for organizing machine learning projects usi
    git clone <repo-url>
    cd project_dir
    ```
-2. **Create and activate virtual environment**
+2. **Create and activate virtual environment** 
+
    ```bash
    python3 -m venv dvc-venv
    echo "export PYTHONPATH=$PWD" >> dvc-venv/bin/activate
    source dvc-venv/bin/activate
+   ```
+   Using Conda :
+   ```bash
+   conda create -n dvc-venv python=3.12 -y
+   conda dvc-venv activate
    ```
 
 3. **Install dependencies**
